@@ -1,0 +1,4 @@
+Category ID: 1
+Category Name: Esport
+Category ID: 4
+Category Name: Photography
