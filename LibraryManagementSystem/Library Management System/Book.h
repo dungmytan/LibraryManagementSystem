@@ -36,7 +36,6 @@ public:
 	string genderBookToString(GenderBook gender);
 	Book() = default;
 	string toString();
-	string toStringFromFlie();
 	string bookingListToString();
 	string getBookId();
 	string getTitle();

@@ -31,7 +31,7 @@ int main()
         cout << "5. Category\n";
         cout << "0. Exit\n";
         cout << "====================\n";
-        cout << "Chon chuc nang: ";
+        cout << "Choose function: ";
         cin >> choose;
         switch (choose) {
         case 1:
@@ -40,7 +40,7 @@ int main()
             book.readBooksFromFile("Book.txt");
 
             int chooseBook;
-            string chooseBookContinue;
+            string Continue;
             do {
                 
                 system("cls");
@@ -51,7 +51,7 @@ int main()
                 cout << "4. Delete\n";
                 cout << "0. Back\n";
                 cout << "=====================\n";
-                cout << "Chon chuc nang: ";
+                cout << "Choose function: ";
                 cin >> chooseBook;
                 switch (chooseBook)
                 {
@@ -63,38 +63,38 @@ int main()
                 }
                 case 2:
                 {
-                    string addAuthorContinue;
+                    cout << "Please! Fill down infomation of book that you want to add in system .\n\n";
                     do {
                         string bookId, title, gender, price, publishingHouse, nation, authorId, authorName, description;
                         string maxId;
                         int getMaxId;
 
-                        cout << "Ten sach: ";
+                        cout << "Title: ";
                         cin.ignore();
                         getline(cin, title);
 
-                        cout << "Loai sach: ";
+                        cout << "Category: ";
                         getline(cin, gender);
 
-                        cout << "Gia thue: ";
+                        cout << "Price: ";
                         getline(cin, price);
 
-                        cout << "Nha xuat ban: ";
+                        cout << "Publishing house: ";
                         getline(cin, publishingHouse);
 
-                        cout << "Quoc gia:";
+                        cout << "Nation:";
                         getline(cin, nation);
 
-                        cout << "Ma tac gia: ";
+                        cout << "Author ID: ";
                         getline(cin, authorId);
 
-                        cout << "Ten tac gia:";
+                        cout << "Author name:";
                         getline(cin, authorName);
 
-                        cout << "Mo ta: ";
+                        cout << "Discription: ";
                         getline(cin, description);
 
-                        //Doc file Author.txt de lay Author id cao nhat
+                        //Doc file Book.txt de lay Book ID cao nhat
                         Book book;
                         maxId = book.readMaxBookId();
                         getMaxId = stoi(maxId) + 1;
@@ -106,120 +106,41 @@ int main()
                             Author(authorId, authorName, description)
                         ));
 
-                        cout << "Ban co muon them tac gia tiep khong?(y/n)";
-                        cin >> addAuthorContinue;
-                    } while (addAuthorContinue == "Y" || addAuthorContinue == "y");
+                        cout << "Do you want to continue to adding more books?(y/n)";
+                        cin >> Continue;
+                    } while (Continue == "Y" || Continue == "y");
                     break;
-
-
-
-                    /*string addBookContinue;
-                    do {
-                        string idBook, titleBook, publishingHouseName, publishingHouseNation, authorName, authorDescription;
-                        double priceRenting;
-
-                        cout << "Nhap id book:";
-                        cin.ignore();
-                        getline(cin, idBook);
-
-                        cout << "Nhap tua sach:";
-                        getline(cin, titleBook);
-
-                        cout << "Nhap gia thue:";
-                        cin >> priceRenting;
-
-                        cout << "Nhap ten nha xuat ban:";
-                        cin.ignore();
-                        getline(cin, publishingHouseName);
-
-                        cout << "Nhap quoc gia:";
-                        getline(cin, publishingHouseNation);
-
-                        cout << "Nhap ten tac gia:";
-                        getline(cin, authorName);
-
-                        cout << "Nhap mo ta tac gia:";
-                        getline(cin, authorDescription);
-
-                        int chooseType;
-                        cout << "Cac loai sach:\n";
-                        cout << "1. Novel\n";
-                        cout << "2. Comic\n";
-                        cout << "3. Poem\n";
-                        cout << "4. Autobiography\n";
-                        cout << "5. Encyclopedia\n";
-                        cout << "6. Thriller\n";
-                        cout << "7. Cookery\n";
-                        cout << "Chon loai sach:";
-                        cin >> chooseType;
-
-                        switch (chooseType) {
-                        case 1:
-                            HSLibrary.addBook(Book(idBook, titleBook, GenderBook::Novel, priceRenting, PublishingHouse(publishingHouseName, publishingHouseNation), Author(authorName, authorDescription)));
-                            HSLibrary.addAuthor(Author(authorName, authorDescription));
-                            break;
-                        case 2:
-                            HSLibrary.addBook(Book(idBook, titleBook, GenderBook::Comic, priceRenting, PublishingHouse(publishingHouseName, publishingHouseNation), Author(authorName, authorDescription)));
-                            HSLibrary.addAuthor(Author(authorName, authorDescription));
-                            break;
-                        case 3:
-                            HSLibrary.addBook(Book(idBook, titleBook, GenderBook::Poem, priceRenting, PublishingHouse(publishingHouseName, publishingHouseNation), Author(authorName, authorDescription)));
-                            HSLibrary.addAuthor(Author(authorName, authorDescription));
-                            break;
-                        case 4:
-                            HSLibrary.addBook(Book(idBook, titleBook, GenderBook::Autobiography, priceRenting, PublishingHouse(publishingHouseName, publishingHouseNation), Author(authorName, authorDescription)));
-                            HSLibrary.addAuthor(Author(authorName, authorDescription));
-                            break;
-                        case 5:
-                            HSLibrary.addBook(Book(idBook, titleBook, GenderBook::Encyclopedia, priceRenting, PublishingHouse(publishingHouseName, publishingHouseNation), Author(authorName, authorDescription)));
-                            HSLibrary.addAuthor(Author(authorName, authorDescription));
-                            break;
-                        case 6:
-                            HSLibrary.addBook(Book(idBook, titleBook, GenderBook::Thriller, priceRenting, PublishingHouse(publishingHouseName, publishingHouseNation), Author(authorName, authorDescription)));
-                            HSLibrary.addAuthor(Author(authorName, authorDescription));
-                            break;
-                        case 7:
-                            HSLibrary.addBook(Book(idBook, titleBook, GenderBook::Cookery, priceRenting, PublishingHouse(publishingHouseName, publishingHouseNation), Author(authorName, authorDescription)));
-                            HSLibrary.addAuthor(Author(authorName, authorDescription));
-                            break;
-                        }
-
-                        cout << "Ban co muon them sach tiep khong?(Yes/No)";
-                        cin >> addBookContinue;
-                    } while (addBookContinue == "Yes" || addBookContinue == "yes");
-                    HSLibrary.getViewBook();
-                    break;*/
                 }
                 case 3:
                 {
-                    string Continue;
+                    cout << "Please! Enter book title that you want to find.\n";
                     do {
                         string searchBookName;
-                        cout << "Nhap ten danh muc muon tim kiem:";
+                        cout << "Book title: ";
                         cin.ignore();
                         getline(cin, searchBookName);
 
                         Book* foundBook = book.searchBook(searchBookName);
 
                         if (foundBook == nullptr) {
-                            cout << "Khong tim thay danh muc co ten: " << searchBookName + "\n" << endl;
+                            cout << "Can not find the book with title is" << searchBookName + "\n" << endl;
                         }
 
-                        cout << "Ban co muon tim kiem tiep khong?(y/n)";
+                        cout << "Do you want to continue searching?(y/n)";
                         cin >> Continue;
                     } while (Continue == "Y" || Continue == "y");
                     break;
                 }
                 case 4:
                 {
-                    string Continue;
+                    cout << "Please! Enter category you want to delete.\n";
                     do {
                         string deleteBookId;
-                        cout << "Nhap category id muon xoa:";
+                        cout << "Category ID: ";
                         cin.ignore();
                         getline(cin, deleteBookId);
                         book.deleteBook(deleteBookId);
-                        cout << "Ban co muon xoa tiep khong?(y/n)";
+                        cout << "Do you want to continue to delete?(y/n)";
                         cin >> Continue;
                     } while (Continue == "Y" || Continue == "y");
                     HSLibrary.getViewStudent();
@@ -234,9 +155,9 @@ int main()
         }
         case 2:
         {
-            string chooseStaffContinue;
+            string Continue;
+            int chooseFunction;
             do {
-                int chooseStaff;
                 system("cls");
                 cout << "===== Menu Staff =====\n";
                 cout << "1. Get all\n";
@@ -244,9 +165,9 @@ int main()
                 cout << "3. Search\n";
                 cout << "4. Delete\n";
                 cout << "======================\n";
-                cout << "Chon chuc nang: ";
-                cin >> chooseStaff;
-                switch (chooseStaff)
+                cout << "Choose function: ";
+                cin >> chooseFunction;
+                switch (chooseFunction)
                 {
                 case 1:
                     if (getDataStaff == 0)
@@ -258,82 +179,80 @@ int main()
                     break;
                 case 2:
                 {
-                    string addStaffContinue;
+                    cout << "Please! Fill down infomation of staff that you want to add in system.\n\n";
                     do {
                         string idStaff, name, phone, email, address, ward, district, city;
 
-                        cout << "Nhap id staff:";
+                        cout << "Staff ID:";
                         cin.ignore();
                         getline(cin, idStaff);
 
-                        cout << "Nhap ho ten:";
+                        cout << "Full name:";
                         getline(cin, name);
 
-                        cout << "Nhap so dien thoai:";
+                        cout << "Phone number:";
                         getline(cin, phone);
 
-                        cout << "Nhap email:";
+                        cout << "Email:";
                         getline(cin, email);
 
-                        cout << "Nhap dia chi:";
+                        cout << "Address number:";
                         getline(cin, address);
 
-                        cout << "Nhap ward:";
+                        cout << "Ward:";
                         getline(cin, ward);
 
-                        cout << "Nhap district:";
+                        cout << "District:";
                         getline(cin, district);
 
-                        cout << "Nhap city:";
+                        cout << "City:";
                         getline(cin, city);
 
                         HSLibrary.addStaff(Staff(idStaff, Person(name, phone, email, Address(address, ward, district, city))));
 
-                        cout << "Ban co muon them sach tiep khong?(Yes/No)";
-                        cin >> addStaffContinue;
-                    } while (addStaffContinue == "Yes" || addStaffContinue == "yes");
+                        cout << "Do you want to continue to adding more staffs?(y/n)";
+                        cin >> Continue;
+                    } while (Continue == "Y" || Continue == "y");
                     break;
                 }
                 case 3:
                 {
-                    string searchStaffContinue;
                     do {
                         string searchIdStaff;
                         cout << "Nhap id nhan vien muon tim kiem:";
                         cin.ignore();
                         getline(cin, searchIdStaff);
                         HSLibrary.searchStaff(searchIdStaff);
-                        cout << "Ban co muon tim nhan vien tiep khong?(Yes/No)";
-                        cin >> searchStaffContinue;
-                    } while (searchStaffContinue == "Yes" || searchStaffContinue == "yes");
+                        cout << "Do you want to continue searching?(y/n)";
+                        cin >> Continue;
+                    } while (Continue == "Y" || Continue == "y");
                     break;
                 }
                 case 4:
                 {
-                    string deleteStaffContinue;
                     do {
                         string deleteIdStaff;
                         cout << "Nhap id staff muon xoa:";
                         cin.ignore();
                         getline(cin, deleteIdStaff);
                         HSLibrary.deleteStaff(deleteIdStaff);
-                        cout << "Ban co muon xoa nhan vien tiep khong?(Yes/No)";
-                        cin >> deleteStaffContinue;
-                    } while (deleteStaffContinue == "Yes" || deleteStaffContinue == "yes");
-                    HSLibrary.getViewStaff();
+                        cout << "Do you want to continue to delete?(y/n)";
+                        cin >> Continue;
+                    } while (Continue == "Y" || Continue == "y");
                     break;
                 }
+                default:
+                    cout << "Don not have this function. Please, Choose agian!" << endl;
+                    _getch();
                 }
-                cout << "Ban co muon chon tiep chuc nang khac de thao tac?(Yes/No)";
-                cin >> chooseStaffContinue;
-            } while (chooseStaffContinue == "Yes" || chooseStaffContinue == "yes");
+            } while (chooseFunction != 0);
             break;
         }
         case 3:
         {
-            string chooseStudentContinue;
+            string Continue;
+            int chooseFunction;
             do {
-                int chooseStudent;
                 system("cls");
                 cout << "===== Menu Student =====\n";
                 cout << "1. Get all\n";
@@ -342,14 +261,10 @@ int main()
                 cout << "4. Delete\n";
                 cout << "0. Back\n";
                 cout << "========================\n";
-                cout << "Chon chuc nang: ";
-                cin >> chooseStudent;
-                switch (chooseStudent)
+                cout << "Choose function: ";
+                cin >> chooseFunction;
+                switch (chooseFunction)
                 {
-                case 0:
-                {
-                    break;
-                }
                 case 1:
                 {
                     if (getDataStudent == 0)
@@ -362,76 +277,75 @@ int main()
                 }
                 case 2:
                 {
-                    string addStudentContinue;
+                    cout << "Please! Fill down infomation of student that you want to add in system.\n\n";
                     do {
                         string idStudent, name, phone, email, major;
 
-                        cout << "Nhap id student:";
+                        cout << "Student ID:";
                         cin.ignore();
                         getline(cin, idStudent);
 
-                        cout << "Nhap ho ten:";
+                        cout << "Full name:";
                         getline(cin, name);
 
-                        cout << "Nhap so dien thoai:";
+                        cout << "Phone number:";
                         getline(cin, phone);
 
-                        cout << "Nhap email:";
+                        cout << "Email:";
                         getline(cin, email);
 
-                        cout << "Nhap nganh hoc:";
+                        cout << "Majors:";
                         getline(cin, major);
 
                         HSLibrary.addStudent(Student(idStudent, major, Person(name, phone, email)));
 
-                        cout << "Ban co muon them sach tiep khong?(Yes/No)";
-                        cin >> addStudentContinue;
-                    } while (addStudentContinue == "Yes" || addStudentContinue == "yes");
+                        cout << "Do you want to continue to adding more students?(y/n)";
+                        cin >> Continue;
+                    } while (Continue == "Y" || Continue == "y");
                     break;
                 }
                 case 3:
                 {
-                    string searchStudentContinue;
                     do {
                         string searchIdStudent;
-                        cout << "Nhap id sinh vien muon tim kiem:";
+                        cout << "Search(ID): ";
                         cin.ignore();
                         getline(cin, searchIdStudent);
                         HSLibrary.searchStudent(searchIdStudent);
-                        cout << "Ban co muon tim sinh vien tiep khong?(Yes/No)";
-                        cin >> searchStudentContinue;
-                    } while (searchStudentContinue == "Yes" || searchStudentContinue == "yes");
+                        cout << "Do you want to continue searching?(y/n)";
+                        cin >> Continue;
+                    } while (Continue == "Y" || Continue == "y");
                     break;
                 }
                 case 4:
                 {
-                    string deleteStudentContinue;
                     do {
                         string deleteIdStudent;
-                        cout << "Nhap id student muon xoa:";
+                        cout << "Detele student ID: ";
                         cin.ignore();
                         getline(cin, deleteIdStudent);
                         HSLibrary.deleteStudent(deleteIdStudent);
-                        cout << "Ban co muon xoa sinh vien tiep khong?(Yes/No)";
-                        cin >> deleteStudentContinue;
-                    } while (deleteStudentContinue == "Yes" || deleteStudentContinue == "yes");
-                    HSLibrary.getViewStudent();
+                        cout << "Do you want to continue to delete?(y/n)";
+                        cin >> Continue;
+                    } while (Continue == "Y" || Continue == "y");
                     break;
                 }
+                default:
+                    cout << "Don not have this function. Please, Choose agian!" << endl;
+                    _getch();
                 }
-                cout << "Ban co muon chon tiep chuc nang khac de thao tac?(Yes/No)";
-                cin >> chooseStudentContinue;
-            } while (chooseStudentContinue == "Yes" || chooseStudentContinue == "yes");
+            } while (chooseFunction != 0);
             break;
         }
         case 4:
         {
             Author author;
             author.readAuthorsFromFile("Author.txt");
-
-            string chooseAuthorContinue;
+            
+            int chooseFunction;
+            string Continue;
             do {
-                int chooseFunction;
+                
                 system("cls");
                 cout << "==== Menu Author ====\n";
                 cout << "1. Get all\n";
@@ -440,7 +354,7 @@ int main()
                 cout << "4. Delete\n";
                 cout << "0. Back\n";
                 cout << "=====================\n";
-                cout << "Chon chuc nang: ";
+                cout << "Choose function: ";
                 cin >> chooseFunction;
                 switch (chooseFunction)
                 {
@@ -451,16 +365,16 @@ int main()
                 }
                 case 2:
                 {
-                    string addAuthorContinue;
+                    cout << "Please! Fill down infomation of author that you want to add in system.\n\n";
                     do {
                         string id, MaxId, authorName, description;
                         int getMaxId;
 
-                        cout << "Nhap ten tac gia:";
+                        cout << "Author name:";
                         cin.ignore();
                         getline(cin, authorName);
 
-                        cout << "Nhap mo ta:";
+                        cout << "Discription:";
                         getline(cin, description);
 
                         //Doc file Author.txt de lay Author id cao nhat
@@ -471,49 +385,45 @@ int main()
 
                         author.addAuthor(Author(id, authorName, description));
 
-                        cout << "Ban co muon them tac gia tiep khong?(Yes/No)";
-                        cin >> addAuthorContinue;
-                    } while (addAuthorContinue == "Yes" || addAuthorContinue == "yes");
+                        cout << "Do you want to continue adding more authors?(y/n)";
+                        cin >> Continue;
+                    } while (Continue == "Y" || Continue == "y");
                     break;
                 }
                 case 3:
                 {
-                    string searchAuthorContinue;
+                    cout << "Please! Enter author id that you want to find.\n";
                     do {
                         string searchIdAuthor;
-                        cout << "Nhap id tac gia muon tim kiem:";
+                        cout << "Search(ID): ";
                         cin.ignore();
                         getline(cin, searchIdAuthor);
                         Author* foundAuthor = author.searchAuthor(searchIdAuthor);
 
                         if (foundAuthor == nullptr) {
-                            cout << "Khong tim thay tac gia co Author ID: " << searchIdAuthor + "\n" << endl;
+                            cout << "Can not find author with id is " << searchIdAuthor + "\n" << endl;
                         }
 
-                        cout << "Ban co muon tim sinh vien tiep khong?(Yes/No)";
-                        cin >> searchAuthorContinue;
-                    } while (searchAuthorContinue == "Yes" || searchAuthorContinue == "yes");
+                        cout << "Do you want to continue searching?(y/n)";
+                        cin >> Continue;
+                    } while (Continue == "Y" || Continue == "y");
                     break;
                 }
                 case 4:
                 {
-                    string addAuthorContinue;
                     do {
-                        string deleteIdStudent;
-                        cout << "Nhap id author muon xoa:";
+                        string deleteIdAuthor;
+                        cout << "Delete author id:";
                         cin.ignore();
-                        getline(cin, deleteIdStudent);
-                        author.deleteAuthor(deleteIdStudent);
-                        cout << "Ban co muon xoa sinh vien tiep khong?(Yes/No)";
-                        cin >> addAuthorContinue;
-                    } while (addAuthorContinue == "Yes" || addAuthorContinue == "yes");
-                    HSLibrary.getViewStudent();
+                        getline(cin, deleteIdAuthor);
+                        author.deleteAuthor(deleteIdAuthor);
+                        cout << "Do you want to continue deleting?(y/n)";
+                        cin >> Continue;
+                    } while (Continue == "Y" || Continue == "y");
                     break;
                 }
                 }
-                cout << "Ban co muon chon tiep chuc nang khac de thao tac?(Yes/No)";
-                cin >> chooseAuthorContinue;
-            } while (chooseAuthorContinue == "Yes" || chooseAuthorContinue == "yes");
+            } while (chooseFunction != 0);
             break;
         }
         case 5:
@@ -522,10 +432,9 @@ int main()
             category.readCategoriesFromFile("Category.txt");
 
             int chooseFunction;
-            string chooseCategoryContinue;
+            string Continue;
             do {
                 system("cls");
-                
                 cout << "==== Menu Category ====\n";
                 cout << "1. Get all\n";
                 cout << "2. Add\n";
@@ -533,8 +442,7 @@ int main()
                 cout << "4. Delete\n";
                 cout << "0. Back\n";
                 cout << "=======================\n";
-                cout << "Chon chuc nang: ";
-
+                cout << "Choose function: ";
                 cin >> chooseFunction;
                 switch (chooseFunction)
                 {
@@ -546,12 +454,12 @@ int main()
                 }
                 case 2:
                 {
-                    string addCategoryContinue;
+                    cout << "Please! Fill down infomation of Category that you want to add in system.\n\n";
                     do {
                         string categoryId, MaxId, categoryName;
                         int getMaxId;
 
-                        cout << "Nhap ten loai sach moi:";
+                        cout << "Category: ";
                         cin.ignore();
                         getline(cin, categoryName);
 
@@ -562,50 +470,46 @@ int main()
 
                         category.addCategory(Category(categoryId, categoryName));
 
-                        cout << "Ban co muon them tac gia tiep khong?(Yes/No)";
-                        cin >> addCategoryContinue;
-                    } while (addCategoryContinue == "Yes" || addCategoryContinue == "yes");
+                        cout << "Do you want to continue adding more categories?(y/n)";
+                        cin >> Continue;
+                    } while (Continue == "Y" || Continue == "y");
                     break;
                 }
                 case 3:
                 {
-                    string chooseCategoryContinue;
+                    cout << "Please! Enter category name that you want to find.\n";
                     do {
                         string searchCategoryName;
-                        cout << "Nhap ten danh muc muon tim kiem:";
+                        cout << "Search(Name):";
                         cin.ignore();
                         getline(cin, searchCategoryName);
 
                         Category* foundCategory = category.searchCategory(searchCategoryName);
 
                         if (foundCategory == nullptr) {
-                            cout << "Khong tim thay danh muc co ten: " << searchCategoryName + "\n" << endl;
+                            cout << "Can not find " << searchCategoryName + " categoty\n" << endl;
                         }
 
-                        cout << "Ban co muon tim kiem tiep khong?(Yes/No)";
-                        cin >> chooseCategoryContinue;
-                    } while (chooseCategoryContinue == "Yes" || chooseCategoryContinue == "yes");
+                        cout << "Do you want to continue searching?(y/n)";
+                        cin >> Continue;
+                    } while (Continue == "Y" || Continue == "y");
                     break;
                 }
                 case 4:
                 {
-                    string addCategoryContinue;
+                    string Continue;
                     do {
                         string deleteCategoryId;
-                        cout << "Nhap category id muon xoa:";
+                        cout << "Delete with category id:";
                         cin.ignore();
                         getline(cin, deleteCategoryId);
                         category.deleteCategory(deleteCategoryId);
-                        cout << "Ban co muon xoa tiep khong?(Yes/No)";
-                        cin >> addCategoryContinue;
-                    } while (addCategoryContinue == "Yes" || addCategoryContinue == "yes" ||
-                        addCategoryContinue == "Y" || addCategoryContinue == "y");
-                    HSLibrary.getViewStudent();
+                        cout << "Do you want to continue deleting?(y/n)";
+                        cin >> Continue;
+                    } while (Continue == "Y" || Continue == "y");
                     break;
                 }
                 }
-                /*cout << "Ban co muon chon tiep chuc nang khac de thao tac?(Yes/No)";
-                cin >> chooseCategoryContinue;*/
             } while (chooseFunction != 0);
             break;
         }
