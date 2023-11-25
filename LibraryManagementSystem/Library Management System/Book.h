@@ -13,31 +13,35 @@ using namespace std;
 
 class Book
 {
-public:
+private:
 	string bookId;
 	string title;
-	GenderBook type;
+	string type;
 	Author author;
 	double priceRending;
 	PublishingHouse publishingHouse;
 	
 	list<RentingBook> bookingList;
+	list <Book> bookList;
 
 public:
 	Book(
 		string bookId,
 		string title,
-		GenderBook type,
+		string type,
 		double priceRending,
 		PublishingHouse publishingHouse,
-		Author author
-		
+		Author author		
 	);
 	string genderBookToString(GenderBook gender);
 	Book() = default;
 	string toString();
+	string toStringFromFlie();
 	string bookingListToString();
 	string getBookId();
 	string getTitle();
+
+	void readBooksFromFile(const string& fileName);
+	void getViewBook();
 };
 

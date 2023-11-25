@@ -55,7 +55,7 @@ void Author::readAuthorsFromFile(const string& fileName)
         inFile.close();
     }
     else {
-        cout << "Khong the mo file de doc!" << endl;
+        cout << "Can not open file and read!" << endl;
     }
 }
 

@@ -34,15 +34,15 @@ int main()
         cout << "Chon chuc nang: ";
         cin >> choose;
         switch (choose) {
-        case 0:
-        {
-            break;
-        }
         case 1:
         {
+            Book book;
+            book.readBooksFromFile("Book.txt");
+
+            int chooseBook;
             string chooseBookContinue;
             do {
-                int chooseBook;
+                
                 system("cls");
                 cout << "===== Menu Book =====\n";
                 cout << "1. Get all\n";
@@ -55,19 +55,13 @@ int main()
                 cin >> chooseBook;
                 switch (chooseBook)
                 {
-                case 0:
+                case 1:
                 {
+                    book.getViewBook();
+                    _getch();
                     break;
                 }
-                /*case 1:
-                    if (getData == 0)
-                    {
-                        HSLibrary.inputFromFile();
-                        getData++;
-                    }
-                    HSLibrary.getViewBook();
-                    break;
-                case 2:
+                    /*case 2:
                 {
                     string addBookContinue;
                     do {
@@ -178,10 +172,11 @@ int main()
                 }*/
                 default:
                     cout << "Don not have this function. Please, Choose agian!" << endl;
+                    _getch();
                 }
                 /*cout << "Ban co muon chon tiep chuc nang khac de thao tac?(Yes/No)";
                 cin >> chooseBookContinue;*/
-            } while (chooseBookContinue == "Yes" || chooseBookContinue == "yes");
+            } while (chooseBook != 0);
             break;
         }
         case 2:
@@ -569,6 +564,9 @@ int main()
             } while (chooseFunction != 0);
             break;
         }
+        default:
+            cout << "Don not have this function. Please, Choose agian!" << endl;
+            _getch();
         }
     }while (choose != 0);
 } 

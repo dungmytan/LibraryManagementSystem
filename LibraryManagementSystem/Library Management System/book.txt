@@ -4,6 +4,7 @@ Gender: Comic
 Price: 18.000 vnd
 Publishing house: Kim Hoang
 Nation: Viet Nam
+Author ID: 1
 Author: Pham Nhat Anh
 Description: Sach ve tuoi tre
 Book ID: 5
@@ -12,13 +13,7 @@ Gender: Novel
 Price: 96.000 vnd
 Publishing house: Robert T. Kiyosaki
 Nation: Japan
+Author ID: 1
 Author: Robert T. Kiyosaki
 Description: Robert Toru Kiyosaki la mot nha ?au tu, doanh nhan ?ong thoi la mot tac gia nguoi My. Kiyosaki noi tieng boi cuon sach Rich Dad, Poor Dad. Ong ?a viet 18 cuon sach, ban tong cong 26 trieu ban.
-Book ID: 1548
-Title: 100 mon an ngon moi ngay
-Gender: Cookery
-Price: 0.050 vnd
-Publishing house: Kim Nguyen
-Nation: Viet Nam
-Author: Hanh Le
-Description: Nha am thuc tai ba
+
