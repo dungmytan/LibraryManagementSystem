@@ -40,39 +40,10 @@ string Book::toString()
 	return "Book ID: " + this->bookId
 		+ "\nTitle: " + this->title
 		+ "\nGender: " + this->type
-		+ "\nPrice: " + priceString
+		+ "\nPrice: " + /*(this->priceRending == 0.0 ? "0.000" : to_string(this->priceRending))*/ priceString
 		+ "\n" + this->publishingHouse.toString()
 		+ "\n" + this->author.toString(); 
 }
-
-//string Book::toStringFromFlie()
-//{
-//    // Chuyển giá trị double thành chuỗi
-//    string priceString = to_string(this->priceRending);
-//
-//    // Tìm vị trí của dấu chấm thập phân
-//    size_t dotPosition = priceString.find('.');
-//
-//    // Nếu không có dấu chấm thập phân, thêm ".000" vào cuối chuỗi
-//    if (dotPosition == string::npos) {
-//        priceString += ".000";
-//    }
-//    else {
-//        // Nếu có dấu chấm thập phân, thêm các số '0' nếu cần thiết
-//        size_t decimalPartLength = priceString.length() - dotPosition - 1;
-//        if (decimalPartLength < 3) {
-//            priceString += std::string(3 - decimalPartLength, '0');
-//        }
-//    }
-//
-//    // Định dạng giá trị thành chuỗi theo định dạng mong muốn
-//    return "Book ID: " + this->bookId +
-//        "\nTitle: " + this->title +
-//        "\nGender: " + this->type +
-//        "\nPrice: " + priceString +
-//        "\n" + this->publishingHouse.toString() +
-//        "\n" + this->author.toString();
-//}
 
 string Book::bookingListToString()
 {
@@ -158,11 +129,94 @@ void Book::readBooksFromFile(const string& fileName)
     }
 }
 
-
 void Book::getViewBook()
 {
 	cout << "Danh sach:\n";
 	for (auto& book : this->bookList) {
 		cout << book.toString() << "\n\n";
 	}
+}
+
+string Book::readMaxBookId()
+{
+    string maxId = "0";
+    ifstream inFile("Book.txt");
+
+    if (inFile.is_open()) {
+        string line;
+        while (getline(inFile, line)) {
+            // Nếu dòng bắt đầu với "Author ID:"
+            if (line.find("Book ID:") == 0) {
+                // Lấy id từ dòng và chuyển thành số nguyên
+                int id = stoi(line.substr(9));
+
+                // Kiểm tra nếu id lớn hơn maxId
+                if (id > stoi(maxId)) {
+                    maxId = to_string(id);
+                }
+            }
+        }
+
+        inFile.close();
+    }
+
+    return maxId;
+}
+
+bool Book::addBook(Book book)
+{
+    this->bookList.push_back(book);
+    ofstream fileOut("Book.txt", ios::app);
+
+    if (fileOut.is_open()) {
+        fileOut << book.toString() << endl;
+    }
+    else {
+        cerr << "Can not open file and write." << endl;
+    }
+
+    fileOut.close();
+    return true;
+}
+
+Book* Book::searchBook(const string& bookName)
+{
+    for (auto& book : this->bookList) {
+        if (book.title == bookName) {
+            cout << book.toString() << "\n";
+            return &book;
+        }
+    }
+    return nullptr;
+}
+
+bool Book::deleteBook(const string& idBook)
+{
+    auto it = remove_if(this->bookList.begin(), this->bookList.end(),
+        [idBook](Book& student) { return student.getBookId() == idBook; });
+
+    if (it != this->bookList.end())
+    {
+        this->bookList.erase(it, this->bookList.end());
+        cout << "Author with ID \"" << idBook << "\" deleted successfully.\n";
+        ofstream fileOut("Book.txt");
+
+        if (fileOut.is_open()) {
+            for (auto& book : this->bookList)
+            {
+                fileOut << book.toString() << endl;
+            }
+        }
+        else {
+            cerr << "Can not open file and write." << endl;
+        }
+
+        fileOut.close();
+        return true;
+    }
+    else
+    {
+        cout << "No category found with ID \"" << idBook << "\" in Library " << "\n";
+        return false;
+    }
 }

@@ -43,5 +43,9 @@ public:
 
 	void readBooksFromFile(const string& fileName);
 	void getViewBook();
+	string readMaxBookId();
+	bool addBook(Book book);
+	Book* searchBook(const string& bookName);
+	bool deleteBook(const string& idBook);
 };
 

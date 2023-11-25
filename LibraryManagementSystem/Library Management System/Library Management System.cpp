@@ -49,7 +49,7 @@ int main()
                 cout << "2. Add\n";
                 cout << "3. Search\n";
                 cout << "4. Delete\n";
-                cout << "0. Back";
+                cout << "0. Back\n";
                 cout << "=====================\n";
                 cout << "Chon chuc nang: ";
                 cin >> chooseBook;
@@ -61,9 +61,59 @@ int main()
                     _getch();
                     break;
                 }
-                    /*case 2:
+                case 2:
                 {
-                    string addBookContinue;
+                    string addAuthorContinue;
+                    do {
+                        string bookId, title, gender, price, publishingHouse, nation, authorId, authorName, description;
+                        string maxId;
+                        int getMaxId;
+
+                        cout << "Ten sach: ";
+                        cin.ignore();
+                        getline(cin, title);
+
+                        cout << "Loai sach: ";
+                        getline(cin, gender);
+
+                        cout << "Gia thue: ";
+                        getline(cin, price);
+
+                        cout << "Nha xuat ban: ";
+                        getline(cin, publishingHouse);
+
+                        cout << "Quoc gia:";
+                        getline(cin, nation);
+
+                        cout << "Ma tac gia: ";
+                        getline(cin, authorId);
+
+                        cout << "Ten tac gia:";
+                        getline(cin, authorName);
+
+                        cout << "Mo ta: ";
+                        getline(cin, description);
+
+                        //Doc file Author.txt de lay Author id cao nhat
+                        Book book;
+                        maxId = book.readMaxBookId();
+                        getMaxId = stoi(maxId) + 1;
+                        bookId = to_string(getMaxId);
+
+                        book.addBook(Book(
+                            bookId, title, gender, stod(price),
+                            PublishingHouse(publishingHouse, nation),
+                            Author(authorId, authorName, description)
+                        ));
+
+                        cout << "Ban co muon them tac gia tiep khong?(y/n)";
+                        cin >> addAuthorContinue;
+                    } while (addAuthorContinue == "Y" || addAuthorContinue == "y");
+                    break;
+
+
+
+                    /*string addBookContinue;
                     do {
                         string idBook, titleBook, publishingHouseName, publishingHouseNation, authorName, authorDescription;
                         double priceRenting;
@@ -138,44 +188,47 @@ int main()
                         cin >> addBookContinue;
                     } while (addBookContinue == "Yes" || addBookContinue == "yes");
                     HSLibrary.getViewBook();
-                    break;
+                    break;*/
                 }
                 case 3:
                 {
-                    string searchBookContinue;
+                    string Continue;
                     do {
-                        string searchTileBook;
-                        cout << "Nhap ten sach muon tim kiem:";
+                        string searchBookName;
+                        cout << "Nhap ten danh muc muon tim kiem:";
                         cin.ignore();
-                        getline(cin, searchTileBook);
-                        HSLibrary.searchBook(searchTileBook);
-                        cout << "Ban co muon tim sach tiep khong?(Yes/No)";
-                        cin >> searchBookContinue;
-                    } while (searchBookContinue == "Yes" || searchBookContinue == "yes");
+                        getline(cin, searchBookName);
+
+                        Book* foundBook = book.searchBook(searchBookName);
+
+                        if (foundBook == nullptr) {
+                            cout << "Khong tim thay danh muc co ten: " << searchBookName + "\n" << endl;
+                        }
+
+                        cout << "Ban co muon tim kiem tiep khong?(y/n)";
+                        cin >> Continue;
+                    } while (Continue == "Y" || Continue == "y");
                     break;
                 }
                 case 4:
                 {
-                    string deleteBookContinue;
+                    string Continue;
                     do {
-                        string deleteIdBook;
-                        cout << "Nhap id book muon xoa:";
+                        string deleteBookId;
+                        cout << "Nhap category id muon xoa:";
                         cin.ignore();
-                        getline(cin, deleteIdBook);
-                        HSLibrary.deleteBook(deleteIdBook);
-                        cout << "Ban co muon xoa sach tiep khong?(Yes/No)";
-                        cin >> deleteBookContinue;
-                    } while (deleteBookContinue == "Yes" || deleteBookContinue == "yes");
-                    HSLibrary.getViewBook();
+                        getline(cin, deleteBookId);
+                        book.deleteBook(deleteBookId);
+                        cout << "Ban co muon xoa tiep khong?(y/n)";
+                        cin >> Continue;
+                    } while (Continue == "Y" || Continue == "y");
+                    HSLibrary.getViewStudent();
                     break;
                 }
-                }*/
                 default:
                     cout << "Don not have this function. Please, Choose agian!" << endl;
                     _getch();
                 }
-                /*cout << "Ban co muon chon tiep chuc nang khac de thao tac?(Yes/No)";
-                cin >> chooseBookContinue;*/
             } while (chooseBook != 0);
             break;
         }
@@ -391,10 +444,6 @@ int main()
                 cin >> chooseFunction;
                 switch (chooseFunction)
                 {
-                case 0:
-                {
-                    break;
-                }
                 case 1:
                 {
                     author.getViewAuthor();
@@ -489,10 +538,6 @@ int main()
                 cin >> chooseFunction;
                 switch (chooseFunction)
                 {
-                case 0:
-                {
-                    break;
-                }
                 case 1:
                 {
                     category.getViewCategory();
