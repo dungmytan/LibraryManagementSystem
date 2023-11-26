@@ -5,7 +5,10 @@
 #include <fstream>
 #include <sstream>
 #include <tuple>
+#include <Windows.h>
 using namespace std;
+
+#include "BasicTypes.h"
 
 class Author
 {
@@ -23,6 +26,8 @@ public:
     Author() = default;
     string getIdAuthor();
     string toString();
+
+    void setConsoleColor(ConsoleColor textColor, ConsoleColor bgColor);
 
     bool addAuthor(Author author);
     void readAuthorsFromFile(const string& fileName);

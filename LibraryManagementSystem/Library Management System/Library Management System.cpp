@@ -3,8 +3,10 @@
 #include <fstream>
 #include <cstdlib>
 #include <conio.h>
+#include <Windows.h>
 using namespace std;
 
+#include "BasicTypes.h"
 #include "Person.h"
 #include "Student.h"
 #include "Book.h"
@@ -13,6 +15,12 @@ using namespace std;
 #include "Library.h"
 #include "Staff.h"
 #include "Category.h"
+
+void setConsoleColor(ConsoleColor textColor, ConsoleColor bgColor)
+{
+    int color = textColor + bgColor * 16;
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+}
 
 int main()
 {
@@ -112,14 +120,16 @@ int main()
                                 ));
                             }
                             else {
+                                setConsoleColor(Red, White);
                                 cout << genre + " category do not exist in system. Please! Try agian." << endl;
                             }
                         }
                         else 
                         {
+                            setConsoleColor(Red, White);
                             cout << "Author with id " + authId + " do not exist in system.Please!Try agian." << endl;
                         }
-                        
+                        setConsoleColor(White, Black);
                         cout << "Do you want to continue to adding more books?(y/n)";
                         cin >> Continue;
                     } while (Continue == "Y" || Continue == "y");
@@ -137,9 +147,10 @@ int main()
                         Book* foundBook = book.searchBook(searchBookName);
 
                         if (foundBook == nullptr) {
+                            setConsoleColor(Red, White);
                             cout << "Can not find the book with title is" << searchBookName + "\n" << endl;
                         }
-
+                        setConsoleColor(White, Black);
                         cout << "Do you want to continue searching?(y/n)";
                         cin >> Continue;
                     } while (Continue == "Y" || Continue == "y");
@@ -154,6 +165,7 @@ int main()
                         cin.ignore();
                         getline(cin, deleteBookId);
                         book.deleteBook(deleteBookId);
+                        setConsoleColor(White, Black);
                         cout << "Do you want to continue to delete?(y/n)";
                         cin >> Continue;
                     } while (Continue == "Y" || Continue == "y");
@@ -421,9 +433,10 @@ int main()
                         Author* foundAuthor = author.searchAuthor(searchIdAuthor);
 
                         if (foundAuthor == nullptr) {
+                            setConsoleColor(Red, White);
                             cout << "Can not find author with id is " << searchIdAuthor + "\n" << endl;
                         }
-
+                        setConsoleColor(White, Black);
                         cout << "Do you want to continue searching?(y/n)";
                         cin >> Continue;
                     } while (Continue == "Y" || Continue == "y");
@@ -437,6 +450,7 @@ int main()
                         cin.ignore();
                         getline(cin, deleteIdAuthor);
                         author.deleteAuthor(deleteIdAuthor);
+                        setConsoleColor(White, Black);
                         cout << "Do you want to continue deleting?(y/n)";
                         cin >> Continue;
                     } while (Continue == "Y" || Continue == "y");
@@ -526,6 +540,7 @@ int main()
                         cin.ignore();
                         getline(cin, deleteCategoryId);
                         category.deleteCategory(deleteCategoryId);
+                        setConsoleColor(White, Black);
                         cout << "Do you want to continue deleting?(y/n)";
                         cin >> Continue;
                     } while (Continue == "Y" || Continue == "y");

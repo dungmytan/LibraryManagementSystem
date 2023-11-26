@@ -14,6 +14,12 @@ string Author::toString()
 		+ "\nDescription: " + this->description;
 }
 
+void Author::setConsoleColor(ConsoleColor textColor, ConsoleColor bgColor)
+{
+    int color = textColor + bgColor * 16;
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);   
+}
+
 bool Author::addAuthor(Author author)
 {
     this->authorList.push_back(author);
@@ -109,6 +115,7 @@ bool Author::deleteAuthor(const string& idAuthor)
     if (it != this->authorList.end())
     {
         this->authorList.erase(it, this->authorList.end());
+        setConsoleColor(Green, Black);
         cout << "Author with ID \"" << idAuthor << "\" deleted successfully.\n";
         ofstream fileOut("Author.txt");
 
@@ -127,6 +134,7 @@ bool Author::deleteAuthor(const string& idAuthor)
     }
     else
     {
+        setConsoleColor(Red, White);
         cout << "No author found with ID \"" << idAuthor << "\" in Library " << "\n";
         return false;
     }

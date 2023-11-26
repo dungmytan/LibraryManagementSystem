@@ -5,6 +5,7 @@
 #include <map>
 #include <cstdio>
 #include <iomanip>
+#include <Windows.h>
 using namespace std;
 
 #include "BasicTypes.h"
@@ -34,12 +35,14 @@ public:
 		PublishingHouse publishingHouse,
 		Author author		
 	);
-	string genderBookToString(GenderBook gender);
 	Book() = default;
 	string toString();
 	string bookingListToString();
+
 	string getBookId();
 	string getTitle();
+
+	void setConsoleColor(ConsoleColor textColor, ConsoleColor bgColor);
 
 	void readBooksFromFile(const string& fileName);
 	void getViewBook();

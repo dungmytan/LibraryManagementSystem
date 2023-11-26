@@ -12,6 +12,12 @@ string Category::toString()
 		+ "\nCategory Name: " + this->categoryName;
 }
 
+void Category::setConsoleColor(ConsoleColor textColor, ConsoleColor bgColor)
+{
+    int color = textColor + bgColor * 16;
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color); 
+}
+
 bool Category::addCategory(Category category)
 {
     this->categoryList.push_back(category);
@@ -81,6 +87,7 @@ bool Category::deleteCategory(const string& idCategory)
     if (it != this->categoryList.end())
     {
         this->categoryList.erase(it, this->categoryList.end());
+        setConsoleColor(Green, Black);
         cout << "Author with ID \"" << idCategory << "\" deleted successfully.\n";
         ofstream fileOut("Author.txt");
 
@@ -99,6 +106,7 @@ bool Category::deleteCategory(const string& idCategory)
     }
     else
     {
+        setConsoleColor(Red, White);
         cout << "No category found with ID \"" << idCategory << "\" in Library " << "\n";
         return false;
     }

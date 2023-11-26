@@ -4,17 +4,6 @@
 #define OUT
 #define INOUT
 
-enum class GenderBook
-{
-	Novel,
-	Comic,
-	Poem,
-	Autobiography,
-	Encyclopedia,
-	Thriller,
-	Cookery
-};
-
 enum class BookingStatus {
 	Requested,
 	Pending,
@@ -23,5 +12,17 @@ enum class BookingStatus {
 	CheckedOut,
 	Canceled,
 	Abandoned
+};
+
+enum ConsoleColor
+{
+    Black = 0,
+    Blue = 1,
+    Green = 2,
+    Cyan = 3,
+    Red = 4,
+    Magenta = 5,
+    Yellow = 6,
+    White = 7
 };
 

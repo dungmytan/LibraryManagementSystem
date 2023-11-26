@@ -10,25 +10,6 @@ Book::Book(string bookId, string title, string type, double priceRending, Publis
 	this->author = author;
 }
 
-string Book::genderBookToString(GenderBook gender)
-{
-	static const std::map<GenderBook, std::string> genderMap = {
-		{GenderBook::Novel, "Novel"},
-		{GenderBook::Comic, "Comic"},
-		{GenderBook::Poem, "Poem"},
-		{GenderBook::Autobiography, "Autobiography"},
-		{GenderBook::Encyclopedia, "Encyclopedia"},
-		{GenderBook::Thriller, "Thriller"},
-		{GenderBook::Cookery, "Cookery"} };
-
-	auto it = genderMap.find(gender);
-	if (it != genderMap.end())
-	{
-		return it->second;
-	}
-	return "Unknown";
-}
-
 string Book::toString()
 {
     ostringstream priceStream;
@@ -64,6 +45,12 @@ string Book::getBookId()
 string Book::getTitle()
 {
 	return this->title;
+}
+
+void Book::setConsoleColor(ConsoleColor textColor, ConsoleColor bgColor)
+{
+    int color = textColor + bgColor * 16;
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);   
 }
 
 void Book::readBooksFromFile(const string& fileName)
@@ -195,7 +182,8 @@ bool Book::deleteBook(const string& idBook)
     if (it != this->bookList.end())
     {
         this->bookList.erase(it, this->bookList.end());
-        cout << "Author with ID \"" << idBook << "\" deleted successfully.\n";
+        setConsoleColor(Green, Black);
+        cout << "Book with ID \"" << idBook << "\" deleted successfully.\n";
         ofstream fileOut("Book.txt");
 
         if (fileOut.is_open()) {
@@ -213,7 +201,8 @@ bool Book::deleteBook(const string& idBook)
     }
     else
     {
-        cout << "No category found with ID \"" << idBook << "\" in Library " << "\n";
+        setConsoleColor(Red, White);
+        cout << "No book found with ID \"" << idBook << "\" in Library " << "\n";
         return false;
     }
 }

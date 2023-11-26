@@ -3,7 +3,11 @@
 #include <list>
 #include <string>
 #include <fstream>
+#include <Windows.h>
 using namespace std;
+
+#include "BasicTypes.h"
+
 class Category
 {
 private:
@@ -15,6 +19,8 @@ public:
 	Category(string categoryId, string categoryName);
 	string toString();
 	Category() = default;
+
+	void setConsoleColor(ConsoleColor textColor, ConsoleColor bgColor);
 
 	// Function
 	bool addCategory(Category category);
