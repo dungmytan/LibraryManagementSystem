@@ -1,7 +1,7 @@
 Book ID: 1
 Title: Tuoi Tre Dang gia Bao Nhieu
 Gender: Comic
-Price: 0.018 vnd
+Price: 0.02 vnd
 Publishing house: Kim Hoang
 Nation: Viet Nam
 Author ID: 1
@@ -10,7 +10,7 @@ Description: Sach ve tuoi tre
 Book ID: 5
 Title: Day Con Lam Giau
 Gender: Novel
-Price: 0.096 vnd
+Price: 0.10 vnd
 Publishing house: Robert T. Kiyosaki
 Nation: Japan
 Author ID: 1
@@ -19,7 +19,7 @@ Description: Robert Toru Kiyosaki la mot nha ?au tu, doanh nhan ?ong thoi la mot
 Book ID: 6
 Title: Cuoc cai cach the ky
 Gender: Word
-Price: 0.000 vnd
+Price: 0.00 vnd
 Publishing house: Vuong Thinh
 Nation: Viet Nam
 Author ID: 200
@@ -28,7 +28,7 @@ Description: Khong co mo ta
 Book ID: 7
 Title: 1s
 Gender: wad
-Price: 0.000 vnd
+Price: 0.00 vnd
 Publishing house: wad
 Nation: awd
 Author ID: d
@@ -37,7 +37,7 @@ Description: d
 Book ID: 8
 Title: 1
 Gender: 1
-Price: 200.000 vnd
+Price: 200.00 vnd
 Publishing house: 2
 Nation: 2
 Author ID: 2
@@ -46,7 +46,7 @@ Description: 2
 Book ID: 9
 Title: 1
 Gender: 1
-Price: 0.001 vnd
+Price: 0.00 vnd
 Publishing house: 1
 Nation: 1
 Author ID: 1
@@ -55,34 +55,16 @@ Description: 1
 Book ID: 10
 Title: 1
 Gender: 2
-Price: 0.003 vnd
+Price: 0.00 vnd
 Publishing house: 4
 Nation: 5
 Author ID: 6
 Author: 7
 Description: 8
-Book ID: 11
-Title: Basketball
-Gender: Esport
-Price: 100.000 vnd
-Publishing house: VN
-Nation: VN
-Author ID: 1
-Author: AC
-Description: 123
-Book ID: 12
-Title: 1
-Gender: Esport
-Price: 100.000 vnd
-Publishing house: 1
-Nation: 1
-Author ID: 1
-Author: 111
-Description: 11111
 Book ID: 13
 Title: 123456789
 Gender: Esport
-Price: 200.000 vnd
+Price: 200.00 vnd
 Publishing house: 123
 Nation: VN
 Author ID: 2

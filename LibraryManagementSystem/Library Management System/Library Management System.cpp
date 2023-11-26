@@ -68,7 +68,7 @@ int main()
                     cout << "Please! Fill down infomation of book that you want to add in system .\n\n";
                     do {
                         string bookId, title, genre, price, publishingHouse, nation, authorId, authorName, description;
-                        string maxId;
+                        string maxId, authId;
                         int getMaxId;
 
                         cout << "Title: ";
@@ -89,12 +89,7 @@ int main()
 
                         cout << "Author ID: ";
                         getline(cin, authorId);
-
-                        /*cout << "Author name:";
-                        getline(cin, authorName);
-
-                        cout << "Discription: ";
-                        getline(cin, description);*/
+                        authId = authorId;
 
                         //Doc file Book.txt de lay Book ID cao nhat
                         Book book;
@@ -117,12 +112,12 @@ int main()
                                 ));
                             }
                             else {
-                                cout << "Category do not exist in system. Please! Try agian." << endl;
+                                cout << genre + " category do not exist in system. Please! Try agian." << endl;
                             }
                         }
                         else 
                         {
-                            cout << "Author do not exist in system. Please! Try agian." << endl;
+                            cout << "Author with id " + authId + " do not exist in system.Please!Try agian." << endl;
                         }
                         
                         cout << "Do you want to continue to adding more books?(y/n)";
@@ -152,10 +147,10 @@ int main()
                 }
                 case 4:
                 {
-                    cout << "Please! Enter category you want to delete.\n";
+                    cout << "Please! Enter book id you want to delete.\n";
                     do {
                         string deleteBookId;
-                        cout << "Category ID: ";
+                        cout << "Book ID: ";
                         cin.ignore();
                         getline(cin, deleteBookId);
                         book.deleteBook(deleteBookId);

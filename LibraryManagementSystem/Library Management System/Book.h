@@ -4,6 +4,7 @@
 #include <list>
 #include <map>
 #include <cstdio>
+#include <iomanip>
 using namespace std;
 
 #include "BasicTypes.h"

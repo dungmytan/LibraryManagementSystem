@@ -5,7 +5,6 @@
 #include <fstream>
 #include <sstream>
 #include <tuple>
-#include <iomanip>
 using namespace std;
 
 class Author
