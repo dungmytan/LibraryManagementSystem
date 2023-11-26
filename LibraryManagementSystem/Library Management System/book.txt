@@ -43,3 +43,39 @@ Nation: 2
 Author ID: 2
 Author: 2
 Description: 2
+Book ID: 9
+Title: 1
+Gender: 1
+Price: 0.001 vnd
+Publishing house: 1
+Nation: 1
+Author ID: 1
+Author: 1
+Description: 1
+Book ID: 10
+Title: 1
+Gender: 2
+Price: 0.003 vnd
+Publishing house: 4
+Nation: 5
+Author ID: 6
+Author: 7
+Description: 8
+Book ID: 11
+Title: Basketball
+Gender: Esport
+Price: 100.000 vnd
+Publishing house: VN
+Nation: VN
+Author ID: 1
+Author: AC
+Description: 123
+Book ID: 12
+Title: 1
+Gender: Esport
+Price: 100.000 vnd
+Publishing house: 1
+Nation: 1
+Author ID: 1
+Author: 111
+Description: 11111

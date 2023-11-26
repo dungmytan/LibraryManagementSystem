@@ -22,6 +22,7 @@ public:
 	void getViewCategory();
 	Category* searchCategory(const string& categoryName);
 	bool deleteCategory(const string& idCategory);
+	bool isCategoryExist(string categoryName);
 
 	string readMaxCategoryId();
 	string getIdCategory();

@@ -55,6 +55,8 @@ int main()
                 cin >> chooseBook;
                 switch (chooseBook)
                 {
+                case 0:
+                    break;
                 case 1:
                 {
                     book.getViewBook();
@@ -65,7 +67,7 @@ int main()
                 {
                     cout << "Please! Fill down infomation of book that you want to add in system .\n\n";
                     do {
-                        string bookId, title, gender, price, publishingHouse, nation, authorId, authorName, description;
+                        string bookId, title, genre, price, publishingHouse, nation, authorId, authorName, description;
                         string maxId;
                         int getMaxId;
 
@@ -74,7 +76,7 @@ int main()
                         getline(cin, title);
 
                         cout << "Category: ";
-                        getline(cin, gender);
+                        getline(cin, genre);
 
                         cout << "Price: ";
                         getline(cin, price);
@@ -88,11 +90,11 @@ int main()
                         cout << "Author ID: ";
                         getline(cin, authorId);
 
-                        cout << "Author name:";
+                        /*cout << "Author name:";
                         getline(cin, authorName);
 
                         cout << "Discription: ";
-                        getline(cin, description);
+                        getline(cin, description);*/
 
                         //Doc file Book.txt de lay Book ID cao nhat
                         Book book;
@@ -100,12 +102,29 @@ int main()
                         getMaxId = stoi(maxId) + 1;
                         bookId = to_string(getMaxId);
 
-                        book.addBook(Book(
-                            bookId, title, gender, stod(price),
-                            PublishingHouse(publishingHouse, nation),
-                            Author(authorId, authorName, description)
-                        ));
+                        Category cat;
+                        Author auth;
+                        bool isAuthorExist;
+                        tie(isAuthorExist, authorId, authorName, description) = auth.isAuthorExist(authorId);
 
+                        if (isAuthorExist)
+                        {
+                            if (cat.isCategoryExist(genre)) {
+                                book.addBook(Book(
+                                    bookId, title, genre, stod(price),
+                                    PublishingHouse(publishingHouse, nation),
+                                    Author(authorId, authorName, description)
+                                ));
+                            }
+                            else {
+                                cout << "Category do not exist in system. Please! Try agian." << endl;
+                            }
+                        }
+                        else 
+                        {
+                            cout << "Author do not exist in system. Please! Try agian." << endl;
+                        }
+                        
                         cout << "Do you want to continue to adding more books?(y/n)";
                         cin >> Continue;
                     } while (Continue == "Y" || Continue == "y");
@@ -169,6 +188,8 @@ int main()
                 cin >> chooseFunction;
                 switch (chooseFunction)
                 {
+                case 0:
+                    break;
                 case 1:
                     if (getDataStaff == 0)
                     {
@@ -265,6 +286,8 @@ int main()
                 cin >> chooseFunction;
                 switch (chooseFunction)
                 {
+                case 0:
+                    break;
                 case 1:
                 {
                     if (getDataStudent == 0)
@@ -358,9 +381,12 @@ int main()
                 cin >> chooseFunction;
                 switch (chooseFunction)
                 {
+                case 0:
+                    break;
                 case 1:
                 {
                     author.getViewAuthor();
+                    _getch();
                     break;
                 }
                 case 2:
@@ -378,7 +404,6 @@ int main()
                         getline(cin, description);
 
                         //Doc file Author.txt de lay Author id cao nhat
-                        Author author;
                         MaxId = author.readMaxAuthorId();
                         getMaxId = stoi(MaxId) + 1;
                         id = to_string(getMaxId);
@@ -446,6 +471,8 @@ int main()
                 cin >> chooseFunction;
                 switch (chooseFunction)
                 {
+                case 0:
+                    break;
                 case 1:
                 {
                     category.getViewCategory();

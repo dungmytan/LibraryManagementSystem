@@ -104,6 +104,31 @@ bool Category::deleteCategory(const string& idCategory)
     }
 }
 
+bool Category::isCategoryExist(string categoryName)
+{
+    ifstream inFile("Category.txt");
+    if (!inFile.is_open()) {
+        cerr << "Could not open the Category file." << std::endl;
+        return false;
+    }
+
+    string line;
+    while (getline(inFile, line)) {
+        if (line.find("Category Name:") == 0) {
+            string name = line.substr(15);
+            if (name == categoryName) {
+                inFile.close();
+                return true;
+            }
+        }
+    }
+
+    inFile.close();
+    return false;
+}
+
+
+
 string Category::readMaxCategoryId()
 {
     string maxId = "0";

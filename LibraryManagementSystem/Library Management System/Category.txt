@@ -8,3 +8,5 @@ Category ID: 4
 Category Name: Photography
 Category ID: 5
 Category Name: Cookiery
+Category ID: 6
+Category Name: ACD

@@ -4,6 +4,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <tuple>
 using namespace std;
 
 class Author
@@ -29,5 +30,7 @@ public:
     Author* searchAuthor(const string& idAuthor);
     bool deleteAuthor(const string& idStudent);
     void getViewAuthor();
+
+    tuple<bool, string, string, string> isAuthorExist( string& authorID);
 };
 

@@ -70,7 +70,7 @@ string Author::readMaxAuthorId()
             // Nếu dòng bắt đầu với "Author ID:"
             if (line.find("Author ID:") == 0) {
                 // Lấy id từ dòng và chuyển thành số nguyên
-                int id = stoi(line.substr(13));
+                int id = stoi(line.substr(11));
 
                 // Kiểm tra nếu id lớn hơn maxId
                 if (id > stoi(maxId)) {
@@ -138,4 +138,41 @@ void Author::getViewAuthor()
     for (auto& author : this->authorList) {
         cout << author.toString() << "\n\n";
     }
+}
+
+tuple<bool, string, string, string> Author::isAuthorExist(string& authorID)
+{
+    ifstream inFile("Author.txt");
+    if (!inFile.is_open()) {
+        cerr << "Could not open the Author file." << endl;
+        return { false, "", "", "" };
+    }
+
+    string line;
+    while (getline(inFile, line)) {
+        if (line.find("Author ID:") == 0) {
+            string id = line.substr(11);
+            if (id == authorID) {
+                // Đọc Author Name
+                if (!getline(inFile, line) || line.find("Author:") != 0) {
+                    inFile.close();
+                    return { false, "", "", "" };
+                }
+                string name = line.substr(8);
+
+                // Đọc Description
+                if (!getline(inFile, line) || line.find("Description:") != 0) {
+                    inFile.close();
+                    return { false, "", "", "" };
+                }
+                string description = line.substr(13);
+
+                inFile.close();
+                return { true, authorID, name, description };
+            }
+        }
+    }
+
+    inFile.close();
+    return { false, "", "", "" };
 }
