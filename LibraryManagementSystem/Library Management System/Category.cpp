@@ -128,7 +128,6 @@ bool Category::isCategoryExist(string categoryName)
 }
 
 
-
 string Category::readMaxCategoryId()
 {
     string maxId = "0";

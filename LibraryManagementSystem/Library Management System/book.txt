@@ -79,3 +79,12 @@ Nation: 1
 Author ID: 1
 Author: 111
 Description: 11111
+Book ID: 13
+Title: 123456789
+Gender: Esport
+Price: 200.000 vnd
+Publishing house: 123
+Nation: VN
+Author ID: 2
+Author: 1fcd
+Description: wadwa

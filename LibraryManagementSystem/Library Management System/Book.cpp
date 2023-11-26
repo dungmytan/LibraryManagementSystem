@@ -31,16 +31,19 @@ string Book::genderBookToString(GenderBook gender)
 
 string Book::toString()
 {
-	int priceInThousands = static_cast<int>(this->priceRending / 1000);
-	int priceRemainder = static_cast<int>(this->priceRending) % 1000;
+	//int priceInThousands = static_cast<int>(this->priceRending / 1000);
+	//int priceRemainder = static_cast<int>(this->priceRending) % 1000;
 
-	char priceString[20]; // Đảm bảo đủ kích thước để chứa giá và định dạng mong muốn
-	snprintf(priceString, sizeof(priceString), "%d.%03d vnd", priceInThousands, priceRemainder);
+	//char priceString[20]; // Đảm bảo đủ kích thước để chứa giá và định dạng mong muốn
+	//snprintf(priceString, sizeof(priceString), "%d.%03d vnd", priceInThousands, priceRemainder);
+
+    ostringstream priceStream;
+    priceStream << fixed << setprecision(2) << this->priceRending;
 
 	return "Book ID: " + this->bookId
 		+ "\nTitle: " + this->title
 		+ "\nGender: " + this->type
-		+ "\nPrice: " + /*(this->priceRending == 0.0 ? "0.000" : to_string(this->priceRending))*/ priceString
+		+ "\nPrice: " + priceStream.str() + " vnd"
 		+ "\n" + this->publishingHouse.toString()
 		+ "\n" + this->author.toString(); 
 }
