@@ -198,13 +198,16 @@ int main()
                 case 0:
                     break;
                 case 1:
+                {
                     if (getDataStaff == 0)
                     {
                         HSLibrary.inputStaffFromFile();
                         getDataStaff++;
                     }
                     HSLibrary.getViewStaff();
+                    _getch();
                     break;
+                }  
                 case 2:
                 {
                     cout << "Please! Fill down infomation of staff that you want to add in system.\n\n";
@@ -303,6 +306,7 @@ int main()
                         getDataStudent++;
                     }
                     HSLibrary.getViewStudent();
+                    _getch();
                     break;
                 }
                 case 2:
