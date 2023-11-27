@@ -27,7 +27,7 @@ bool Category::addCategory(Category category)
         fileOut << category.toString() << endl;
     }
     else {
-        cerr << "Khong the mo file de ghi." << endl;
+        cerr << "Can not create a file to record." << endl;
     }
 
     fileOut.close();
@@ -55,13 +55,13 @@ void Category::readCategoriesFromFile(const string& fileName)
         inFile.close();
     }
     else {
-        cout << "Khong the mo file de doc!" << endl;
+        cout << "Can not open file to read!" << endl;
     }
 }
 
 void Category::getViewCategory()
 {
-    cout << "Danh sach cac loai sach hien co tai thu vien:\n";
+    cout << "List of books available at the library:\n";
     for (auto& category : this->categoryList) {
         cout << category.toString() << "\n\n";
     }
@@ -97,7 +97,7 @@ bool Category::deleteCategory(const string& idCategory)
             }
         }
         else {
-            cerr << "Khong the mo file de ghi." << endl;
+            cerr << "Can not create a file to record." << endl;
         }
 
         fileOut.close();

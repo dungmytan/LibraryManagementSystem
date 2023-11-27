@@ -29,7 +29,7 @@ bool Author::addAuthor(Author author)
         fileOut << author.toString() << endl;
     }
     else {
-        cerr << "Khong the mo file de ghi." << endl;
+        cerr << "Can not create a file to record." << endl;
     }
 
     fileOut.close();
@@ -126,7 +126,7 @@ bool Author::deleteAuthor(const string& idAuthor)
             }
         }
         else {
-            cerr << "Khong the mo file de ghi." << endl;
+            cerr << "Can not create a file to record." << endl;
         }
 
         fileOut.close();
@@ -142,7 +142,7 @@ bool Author::deleteAuthor(const string& idAuthor)
 
 void Author::getViewAuthor()
 {
-    cout << "Danh sach tac gia:\n";
+    cout << "Author list:\n";
     for (auto& author : this->authorList) {
         cout << author.toString() << "\n\n";
     }

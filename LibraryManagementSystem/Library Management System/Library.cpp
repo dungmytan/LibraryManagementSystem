@@ -34,7 +34,7 @@ bool Library::addStudent(Student student)
 		fileOut << student.toString() << std::endl;
 	}
 	else {
-		std::cerr << "Khong the mo file de ghi." << std::endl;
+		std::cerr << "Can not create a file to record." << std::endl;
 	}
 
 	fileOut.close();
@@ -47,7 +47,7 @@ void Library::inputStudentFromFile()
 	std::string line, space;
 	Student student;
 	if (!fileIn.is_open()) {
-		std::cerr << "Khong the mo file de doc." << std::endl;
+		std::cerr << "Can not open file to read!" << std::endl;
 		return;
 	}
 
@@ -138,7 +138,7 @@ bool Library::deleteStudent(const string& idStudent)
 			}
 		}
 		else {
-			std::cerr << "Khong the mo file de ghi." << std::endl;
+			std::cerr << "Can not create a file to record." << std::endl;
 		}
 
 		fileOut.close();
