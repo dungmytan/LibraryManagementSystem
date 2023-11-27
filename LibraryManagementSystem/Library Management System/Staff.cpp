@@ -47,7 +47,7 @@ bool Staff::addStaff(Staff staff)
 		fileOut << staff.toString() << std::endl;
 	}
 	else {
-		std::cerr << "Khong the mo file de ghi." << std::endl;
+		std::cerr << "Can not create a file to record." << std::endl;
 	}
 
 	fileOut.close();
@@ -60,7 +60,7 @@ void Staff::inputStaffFromFile()
 	std::string line, space;
 	Staff staff;
 	if (!fileIn.is_open()) {
-		std::cerr << "Khong the mo file de doc." << std::endl;
+		std::cerr << "Can not open file to read!" << std::endl;
 		return;
 	}
 
@@ -161,7 +161,7 @@ bool Staff::deleteStaff(const string& idStaff)
 			}
 		}
 		else {
-			std::cerr << "Khong the mo file de ghi." << std::endl;
+			std::cerr << "Can not create a file to record." << std::endl;
 		}
 
 		fileOut.close();

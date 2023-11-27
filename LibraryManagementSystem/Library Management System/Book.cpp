@@ -101,7 +101,7 @@ void Book::readBooksFromFile(const string& fileName)
 
 void Book::getViewBook()
 {
-	cout << "Danh sach:\n";
+	cout << "List:\n";
 	for (auto& book : this->bookList) {
 		cout << book.toString() << "\n\n";
 	}

@@ -47,7 +47,7 @@ bool Student::addStudent(Student student)
 		fileOut << student.toString() << std::endl;
 	}
 	else {
-		std::cerr << "Khong the mo file de ghi." << std::endl;
+		std::cerr << "Can not create a file to record." << std::endl;
 	}
 
 	fileOut.close();

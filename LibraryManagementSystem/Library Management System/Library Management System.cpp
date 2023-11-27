@@ -253,7 +253,7 @@ int main()
                 {
                     do {
                         string searchIdStaff;
-                        cout << "Nhap id nhan vien muon tim kiem:";
+                        cout << "Enter the Staff id you want to search:";
                         cin.ignore();
                         getline(cin, searchIdStaff);
                         stf.searchStaff(searchIdStaff);
@@ -266,7 +266,7 @@ int main()
                 {
                     do {
                         string deleteIdStaff;
-                        cout << "Nhap id staff muon xoa:";
+                        cout << "Enter the Staff id you want to delete:";
                         cin.ignore();
                         getline(cin, deleteIdStaff);
                         stf.deleteStaff(deleteIdStaff);
@@ -418,7 +418,7 @@ int main()
                         cin.ignore();
                         getline(cin, authorName);
 
-                        cout << "Discription:";
+                        cout << "Description:";
                         getline(cin, description);
 
                         //Doc file Author.txt de lay Author id cao nhat
@@ -562,7 +562,7 @@ int main()
             break;
         }
         default:
-            cout << "Don not have this function. Please, Choose agian!" << endl;
+            cout << "Do not have this function. Please, Choose agian!" << endl;
             _getch();
         }
     }while (choose != 0);
