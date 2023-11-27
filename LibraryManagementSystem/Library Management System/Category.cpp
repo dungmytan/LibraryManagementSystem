@@ -87,8 +87,8 @@ bool Category::deleteCategory(const string& idCategory)
     {
         this->categoryList.erase(it, this->categoryList.end());
         setConsoleColor(Green, Black);
-        cout << "Author with ID \"" << idCategory << "\" deleted successfully.\n";
-        ofstream fileOut("Author.txt");
+        cout << "Category with ID \"" << idCategory << "\" deleted successfully.\n";
+        ofstream fileOut("Category.txt");
 
         if (fileOut.is_open()) {
             for (auto& cat : this->categoryList)
