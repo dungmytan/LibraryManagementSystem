@@ -43,15 +43,6 @@ Nation: 2
 Author ID: 2
 Author: 2
 Description: 2
-Book ID: 9
-Title: 1
-Gender: 1
-Price: 0.00 vnd
-Publishing house: 1
-Nation: 1
-Author ID: 1
-Author: 1
-Description: 1
 Book ID: 13
 Title: 123456789
 Gender: Esport

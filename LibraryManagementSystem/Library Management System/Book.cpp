@@ -1,11 +1,11 @@
 ﻿#include "Book.h"
 
-Book::Book(string bookId, string title, string type, double priceRending, PublishingHouse publishingHouse, Author author)
+Book::Book(string bookId, string title, string type, double priceRenting, PublishingHouse publishingHouse, Author author)
 {
 	this->bookId = bookId;
 	this->title = title;
 	this->type = type;
-	this->priceRending = priceRending;
+	this->priceRenting = priceRenting;
 	this->publishingHouse = publishingHouse;
 	this->author = author;
 }
@@ -13,7 +13,7 @@ Book::Book(string bookId, string title, string type, double priceRending, Publis
 string Book::toString()
 {
     ostringstream priceStream;
-    priceStream << fixed << setprecision(2) << this->priceRending;
+    priceStream << fixed << setprecision(2) << this->priceRenting;
 
 	return "Book ID: " + this->bookId
 		+ "\nTitle: " + this->title
@@ -21,20 +21,6 @@ string Book::toString()
 		+ "\nPrice: " + priceStream.str() + " vnd"
 		+ "\n" + this->publishingHouse.toString()
 		+ "\n" + this->author.toString(); 
-}
-
-string Book::bookingListToString()
-{
-	string str =
-		"Book: " + this->bookId
-		+ " - " + "Price: " + to_string(this->priceRending);
-	
-	for (auto booking : bookingList)
-	{
-		str = str + "\n\r\t" + booking.toString();
-	}
-
-	return str;
 }
 
 string Book::getBookId()

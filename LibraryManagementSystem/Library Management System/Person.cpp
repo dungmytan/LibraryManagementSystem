@@ -12,7 +12,7 @@ Person::Person(string name, string phone, string email)
 Person::Person(string name, string phone, string email, Address address)
 {
 	this->name = name;
-	this->phone = phone;
+	this->phone = phone; 
 	this->email = email;
 	this->address = address;
 }

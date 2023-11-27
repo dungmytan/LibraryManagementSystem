@@ -50,7 +50,6 @@ void Category::readCategoriesFromFile(const string& fileName)
                 categoryName = line.substr(15);
                 categoryList.push_back(Category(categoryId, categoryName));
             }
-            
         }
 
         inFile.close();
@@ -134,7 +133,6 @@ bool Category::isCategoryExist(string categoryName)
     inFile.close();
     return false;
 }
-
 
 string Category::readMaxCategoryId()
 {

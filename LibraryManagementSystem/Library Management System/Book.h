@@ -11,7 +11,6 @@ using namespace std;
 #include "BasicTypes.h"
 #include "PublishingHouse.h"
 #include "Author.h"
-#include "RentingBook.h"
 
 class Book
 {
@@ -20,10 +19,9 @@ private:
 	string title;
 	string type;
 	Author author;
-	double priceRending;
+	double priceRenting;
 	PublishingHouse publishingHouse;
 	
-	list<RentingBook> bookingList;
 	list <Book> bookList;
 
 public:
@@ -31,13 +29,12 @@ public:
 		string bookId,
 		string title,
 		string type,
-		double priceRending,
+		double priceRenting,
 		PublishingHouse publishingHouse,
 		Author author		
 	);
 	Book() = default;
 	string toString();
-	string bookingListToString();
 
 	string getBookId();
 	string getTitle();

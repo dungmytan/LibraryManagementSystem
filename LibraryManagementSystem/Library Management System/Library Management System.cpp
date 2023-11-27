@@ -181,6 +181,8 @@ int main()
         }
         case 2:
         {
+            Staff stf;
+
             string Continue;
             int chooseFunction;
             do {
@@ -190,6 +192,7 @@ int main()
                 cout << "2. Add\n";
                 cout << "3. Search\n";
                 cout << "4. Delete\n";
+                cout << "0. Back\n";
                 cout << "======================\n";
                 cout << "Choose function: ";
                 cin >> chooseFunction;
@@ -201,10 +204,10 @@ int main()
                 {
                     if (getDataStaff == 0)
                     {
-                        HSLibrary.inputStaffFromFile();
+                        stf.inputStaffFromFile();
                         getDataStaff++;
                     }
-                    HSLibrary.getViewStaff();
+                    stf.getViewStaff();
                     _getch();
                     break;
                 }  
@@ -239,7 +242,7 @@ int main()
                         cout << "City:";
                         getline(cin, city);
 
-                        HSLibrary.addStaff(Staff(idStaff, Person(name, phone, email, Address(address, ward, district, city))));
+                        stf.addStaff(Staff(idStaff, Person(name, phone, email, Address(address, ward, district, city))));
 
                         cout << "Do you want to continue to adding more staffs?(y/n)";
                         cin >> Continue;
@@ -253,7 +256,7 @@ int main()
                         cout << "Nhap id nhan vien muon tim kiem:";
                         cin.ignore();
                         getline(cin, searchIdStaff);
-                        HSLibrary.searchStaff(searchIdStaff);
+                        stf.searchStaff(searchIdStaff);
                         cout << "Do you want to continue searching?(y/n)";
                         cin >> Continue;
                     } while (Continue == "Y" || Continue == "y");
@@ -266,7 +269,8 @@ int main()
                         cout << "Nhap id staff muon xoa:";
                         cin.ignore();
                         getline(cin, deleteIdStaff);
-                        HSLibrary.deleteStaff(deleteIdStaff);
+                        stf.deleteStaff(deleteIdStaff);
+                        setConsoleColor(White, Black);
                         cout << "Do you want to continue to delete?(y/n)";
                         cin >> Continue;
                     } while (Continue == "Y" || Continue == "y");
@@ -281,6 +285,8 @@ int main()
         }
         case 3:
         {
+            Student stu;
+
             string Continue;
             int chooseFunction;
             do {
@@ -302,10 +308,10 @@ int main()
                 {
                     if (getDataStudent == 0)
                     {
-                        HSLibrary.inputStudentFromFile();
+                        stu.inputStudentFromFile();
                         getDataStudent++;
                     }
-                    HSLibrary.getViewStudent();
+                    stu.getViewStudent();
                     _getch();
                     break;
                 }
@@ -331,7 +337,7 @@ int main()
                         cout << "Majors:";
                         getline(cin, major);
 
-                        HSLibrary.addStudent(Student(idStudent, major, Person(name, phone, email)));
+                        stu.addStudent(Student(idStudent, major, Person(name, phone, email)));
 
                         cout << "Do you want to continue to adding more students?(y/n)";
                         cin >> Continue;
@@ -345,7 +351,7 @@ int main()
                         cout << "Search(ID): ";
                         cin.ignore();
                         getline(cin, searchIdStudent);
-                        HSLibrary.searchStudent(searchIdStudent);
+                        stu.searchStudent(searchIdStudent);
                         cout << "Do you want to continue searching?(y/n)";
                         cin >> Continue;
                     } while (Continue == "Y" || Continue == "y");
@@ -358,7 +364,8 @@ int main()
                         cout << "Detele student ID: ";
                         cin.ignore();
                         getline(cin, deleteIdStudent);
-                        HSLibrary.deleteStudent(deleteIdStudent);
+                        stu.deleteStudent(deleteIdStudent);
+                        setConsoleColor(White, Black);
                         cout << "Do you want to continue to delete?(y/n)";
                         cin >> Continue;
                     } while (Continue == "Y" || Continue == "y");
