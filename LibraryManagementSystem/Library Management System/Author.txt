@@ -1,9 +1,12 @@
 Author ID: 1
-Author: 111
-Description: 11111
+Author: Robert Kiyosaki
+Description: La mot nha dau tu, doanh nhan dong thoi la mot tac gia nguoi My. Kiyosaki noi tieng boi cuon sach Rich Dad, Poor Dad (Cha Giau, Cha Ngheo). Ong da viet 18 cuon sach, ban tong cong 26 trieu ban. Ba trong so cac cuon sach cua ong la Rich Dad Poor Dad, Rich Dad's CASHFLOW Quadrant va Rich Dad's Guide to Investing da tung duoc xep vao so 10 cuon sach ban chay nhat mot luc tren The Wall Street Journal, USA Today va New York Times.
 Author ID: 2
-Author: 1fcd
-Description: wadwa
+Author: Pham Nhat Anh
+Description: Sach ve tuoi tre
 Author ID: 3
-Author: Lˆ Minh Nh?t
-Description: Nha Lap Trinh
+Author: Joanne Rowling
+Description: La mot nha van, nha tu thien, nha san xuat phim va truyen hinh, nha bien kich nguoi Anh. Ba noi tieng la tac gia cua bo truyen gia tuong Harry Potter tung doat nhieu giai thuong va ban duoc hon 500 trieu ban, tro thanh bo sach ban chay nhat trong lich su.
+
+
+

@@ -1,5 +1,20 @@
-ID: 159
-Name: Nguyen Van A
-Phone: 0265474
-Email: StaffInfor@gmail.com
-Major: AAA
+ID: 1
+Name:  Anh Huy
+Phone: 78462874
+Email: huy.dap@gmail.com
+Major: IT
+ID: 2
+Name: My Dung
+Phone: 618736
+Email: dung.tm@gmail.com
+Major: IT
+ID: 3
+Name: Kim Chi
+Phone: 1283472198
+Email: chi.hk@gmail.com
+Major: IT
+ID: 4
+Name: Quoc Duy
+Phone: 12983421
+Email: duy.nq@gmail.com
+Major: IT

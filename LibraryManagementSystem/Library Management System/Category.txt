@@ -1,12 +1,6 @@
 Category ID: 1
-Category Name: Esport
+Category Name: Comic
 Category ID: 2
-Category Name: 111
+Category Name: Novel
 Category ID: 3
-Category Name: vf
-Category ID: 4
-Category Name: Photography
-Category ID: 5
-Category Name: Cookiery
-Category ID: 6
-Category Name: ACD
+Category Name: Fiction
