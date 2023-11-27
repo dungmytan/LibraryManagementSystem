@@ -131,7 +131,6 @@
     <ClCompile Include="Author.cpp" />
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="Category.cpp" />
-    <ClCompile Include="RentingBook.cpp" />
     <ClCompile Include="DateTime.cpp" />
     <ClCompile Include="Library Management System.cpp" />
     <ClCompile Include="Library.cpp" />
@@ -146,7 +145,6 @@
     <ClInclude Include="BasicTypes.h" />
     <ClInclude Include="Book.h" />
     <ClInclude Include="Category.h" />
-    <ClInclude Include="RentingBook.h" />
     <ClInclude Include="DateTime.h" />
     <ClInclude Include="Library.h" />
     <ClInclude Include="Person.h" />

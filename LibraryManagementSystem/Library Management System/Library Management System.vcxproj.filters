@@ -39,9 +39,6 @@
     <ClCompile Include="Author.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RentingBook.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="DateTime.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -75,9 +72,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Author.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RentingBook.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DateTime.h">
