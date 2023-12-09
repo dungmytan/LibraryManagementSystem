@@ -1,0 +1,10 @@
+^E:\HOA SEN UNIVERSITY\IT\KY_THUAT_LAP_TRINH_NANG_CAO\PROJECT\CMAKE\BUILD\CMAKEFILES\9A8134F5F7C8D7195BAE2F56AD666585\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SE:/Hoa Sen University/IT/Ky_thuat_lap_trinh_nang_cao/Project/Cmake/LibraryManagementSystem" "-BE:/Hoa Sen University/IT/Ky_thuat_lap_trinh_nang_cao/Project/Cmake/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "E:/Hoa Sen University/IT/Ky_thuat_lap_trinh_nang_cao/Project/Cmake/build/LibraryManagementSystem.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\Hoa Sen University\IT\Ky_thuat_lap_trinh_nang_cao\Project\Cmake\LibraryManagementSystem\Library Management System.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Hoa Sen University\IT\Ky_thuat_lap_trinh_nang_cao\Project\Cmake\LibraryManagementSystem\Address.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Hoa Sen University\IT\Ky_thuat_lap_trinh_nang_cao\Project\Cmake\LibraryManagementSystem\Author.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Hoa Sen University\IT\Ky_thuat_lap_trinh_nang_cao\Project\Cmake\LibraryManagementSystem\Book.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Hoa Sen University\IT\Ky_thuat_lap_trinh_nang_cao\Project\Cmake\LibraryManagementSystem\Category.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Hoa Sen University\IT\Ky_thuat_lap_trinh_nang_cao\Project\Cmake\LibraryManagementSystem\DateTime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Hoa Sen University\IT\Ky_thuat_lap_trinh_nang_cao\Project\Cmake\LibraryManagementSystem\Person.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Hoa Sen University\IT\Ky_thuat_lap_trinh_nang_cao\Project\Cmake\LibraryManagementSystem\PublishingHouse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Hoa Sen University\IT\Ky_thuat_lap_trinh_nang_cao\Project\Cmake\LibraryManagementSystem\Staff.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Hoa Sen University\IT\Ky_thuat_lap_trinh_nang_cao\Project\Cmake\LibraryManagementSystem\Student.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Hoa Sen University\IT\Ky_thuat_lap_trinh_nang_cao\Project\Cmake\LibraryManagementSystem\Library.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\Hoa Sen University\IT\Ky_thuat_lap_trinh_nang_cao\Project\Cmake\LibraryManagementSystem\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{FE7B56DE-9C17-3574-8F78-330FAE41C579}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

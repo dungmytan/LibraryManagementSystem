@@ -101,7 +101,7 @@ void Book::readBooksFromFile(const string& fileName)
 
 void Book::getViewBook()
 {
-	cout << "List:\n";
+    cout << "\n========== BOOK LIST ==========\n";
 	for (auto& book : this->bookList) {
 		cout << book.toString() << "\n\n";
 	}
