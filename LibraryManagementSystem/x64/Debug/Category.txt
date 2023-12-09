@@ -1,0 +1,6 @@
+Category ID: 1
+Category Name: Comic
+Category ID: 2
+Category Name: Novel
+Category ID: 3
+Category Name: Fiction
